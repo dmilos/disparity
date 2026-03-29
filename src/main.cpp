@@ -124,7 +124,7 @@ void load_files( )
   std::string dataRoot = "c:/work/code/cpp/prj/disparity/data";
 
   load_case( g_collection["Cloth1"], dataRoot + "/Cloth1", "view1.png", "view5.png", "disp1.png", 3 );
-  return;
+ 
   load_case( g_collection["poster1"], dataRoot + "/poster1", "im2.png",    "im8.png", "disp2.png", 3 );
   load_case( g_collection["circle"], dataRoot  + "/circle",   "untitled-L.png", "untitled-R.png", "disparity.png", 1 );
   load_case( g_collection["cubes1"], dataRoot  + "/cubes1",  "cube-L.png", "cube-R.png", "disparity.png", 1 );
@@ -280,10 +280,6 @@ int main_convolve_increment( int argc, char* argv[] )
 
   StereoConvolveMatch convolve;
 
- 
- 
-   convolve.m_restriction.clear();
-
   auto& matcher = convolve;
   for( auto const& item : g_collection )
    {
@@ -298,33 +294,25 @@ int main_convolve_increment( int argc, char* argv[] )
     disparity = cv::Mat::zeros( left.rows, left.cols, CV_8UC1 );
 
     convolve.initialize( left, right );
-/*
-    convolve.m_restriction.push_back( 77 ); 
-    convolve.m_restriction.push_back( 72 ); 
-    convolve.m_restriction.push_back( 43 ); 
-    convolve.m_restriction.push_back( 16 ); 
-    convolve.m_restriction.push_back( 5 );
-
-    convolve.m_restriction.push_back( 84 +  94 );
-    convolve.m_restriction.push_back( 84 +  92 );
-    convolve.m_restriction.push_back( 84 +  90 );
-    convolve.m_restriction.push_back( 84 +  89 );
-    convolve.m_restriction.push_back( 84 +  87 );
-    convolve.m_restriction.push_back( 84 +  84 );
-    convolve.m_restriction.push_back( 84 +  44 );
-    convolve.m_restriction.push_back( 84 +  40 );
-    convolve.m_restriction.push_back( 84 +  18 );
-    convolve.m_restriction.push_back( 84 +  12 );
-    
-*/
-    convolve.m_restriction.push_back( 177 ); 
-    convolve.m_restriction.push_back( 175 ); 
+    convolve.m_restriction.clear();
+    convolve.m_restriction.push_back( 6 ); 
+    convolve.m_restriction.push_back( 15 ); 
+    convolve.m_restriction.push_back( 22 ); 
+    convolve.m_restriction.push_back( 55 ); 
+    convolve.m_restriction.push_back( 62 ); 
+    convolve.m_restriction.push_back( 76 ); 
+    convolve.m_restriction.push_back( 82 ); 
+    convolve.m_restriction.push_back( 123 ); 
+    convolve.m_restriction.push_back( 129 ); 
     convolve.m_restriction.push_back( 171 ); 
-    convolve.m_restriction.push_back(  82 ); 
-    convolve.m_restriction.push_back(  79 ); 
-    convolve.m_restriction.push_back(  62 ); 
-    convolve.m_restriction.push_back(  42 ); 
+    convolve.m_restriction.push_back( 178 ); 
 
+    convolve.process( disparity, left, right );
+    cv::imwrite( "disparity_" + prefix + number + postfix + ".png", item.second.m_scale * disparity );
+
+    continue;
+    /**/
+ 
     int counter = 0;
  
     int best_quaity   = 0;
@@ -551,8 +539,8 @@ int main_rest( int argc, char *argv[] )
 
 int main( int argc, char* argv[] )
  {
-  //main_single( argc, argv );
+  main_single( argc, argv );
   //main_convolve_combination(  argc,  argv );
-  main_convolve_increment(  argc,  argv );
+  //main_convolve_increment(  argc,  argv );
   //main_rest( argc, argv );
  }
