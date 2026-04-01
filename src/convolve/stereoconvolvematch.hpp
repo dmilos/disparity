@@ -15,7 +15,8 @@ class StereoConvolveMatch
     typedef std::size_t  SizeType;
     typedef double  ScalarType;
     typedef color::rgb<double> ColorType;
-    typedef std::array<std::size_t,2>  Size2DType;
+    typedef std::array<std::size_t, 2>  Size2DType;
+    typedef std::array<ScalarType, 2>  Scalar2DType;
     typedef std::array<int,2>  Integer2DType;
 
     StereoConvolveMatch();

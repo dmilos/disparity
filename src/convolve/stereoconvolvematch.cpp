@@ -102,13 +102,32 @@ void make_laplace0( std::vector<Filter>  & bank )
  }
 
 typedef std::size_t SizeType;
+typedef double  ScalarType;
+typedef std::array<ScalarType, 2>  Scalar2DType;
+
+
 SizeType g_count=0;
 std::ofstream g_ofs( "filter-table.txt" );
+std::vector<std::string> g_table;
+
+int findIndex( std::string const& signature )
+ {
+  for( int index=0; index < g_table.size(); ++ index )
+   {
+    auto const& heist = g_table[index];
+    auto position = heist.find( signature );
+    if( position == std::string::npos ) continue;
+    return index;
+   }
+  return -1;
+ }
 
 void make_laplace( std::vector<Filter>& bank, SizeType const& size_begin, SizeType const& size_end  )
  {
   for( auto size = size_begin; size < size_end; size += 1 )
    {
+    std::stringstream ss;
+
     bank.resize( bank.size() + 1 );
     auto& filter = bank.back();
     filter.size( { (SizeType)size, (SizeType)size } );
@@ -116,15 +135,19 @@ void make_laplace( std::vector<Filter>& bank, SizeType const& size_begin, SizeTy
     save( "filter_laplace_" + format( (int)g_count, 3 ) +"_"+ format( (int)size, 3 ) +".png", filter );
     normalize( filter );
 
-    g_ofs << "/ * " << std::setw( 4 ) << g_count << " * /";
-    g_ofs << "filter.size( { (SizeType)" << size << ", (SizeType)" << size << " } ) ; ";
-    g_ofs << "laplace( filter, 0.5, 0 );" << std::endl;
+    ss << "/ * " << std::setw( 4 ) << g_count << " * /";
+    ss << "filter.size( { (SizeType)" << size << ", (SizeType)" << size << " } ); ";
+    ss << "laplace( filter, 0.5, 0 );"  ;
+
+    g_ofs << ss.str() << std::endl; 
+    g_table.push_back( ss.str() );
+
     ++g_count;
    }
   std::cout << "Total: " << g_count << std::endl;
  }
 
-void make_gabor_simetric( std::vector<Filter>  & bank, SizeType const& size_begin, SizeType const& size_end, SizeType const& rotation_total )
+void make_gabor_simetric( std::vector<Filter>  & bank, SizeType const& size_begin, SizeType const& size_end, SizeType const& rotation_total, Scalar2DType const& press={1,1} )
  {
   typedef std::size_t  SizeType;
   Filter filter;
@@ -133,6 +156,8 @@ void make_gabor_simetric( std::vector<Filter>  & bank, SizeType const& size_begi
   {
     for( int index = 0; index < rotation_total; ++index )
     {
+      std::stringstream ss;
+
       double angle = index * 180.0 / rotation_total;
       //if( 180 - 10 < angle ) continue;
       //if( angle < 10 ) continue;
@@ -141,25 +166,29 @@ void make_gabor_simetric( std::vector<Filter>  & bank, SizeType const& size_begi
       bank.resize( bank.size() + 1 );
       auto& filterA = bank.back();
       filterA.size( { (SizeType)size, (SizeType)size } );
-      gabor( filterA, math::geometry::deg2rad( angle ), 0.618975, 0 );
+      gabor( filterA, math::geometry::deg2rad( angle ), 0.618975, 0, press );
       save( "gabor[" + format( (int)g_count, 3 ) + "_A_" + format( size, 3 ) + "_" + format( (int)(angle), 3 ) + "].png", filterA );
       normalize( filterA );
 
-      g_ofs << "/* " << std::setw( 4 ) << g_count << " */";
-      g_ofs << "filter.size( { (SizeType)" << std::setw( 2 )<< size << ", (SizeType)" << std::setw( 2 ) << size << " } ) ; ";
-      g_ofs << "gabor( filter, math::geometry::deg2rad( " << std::setw( 3 ) << angle << "), 0.618975, 0 );" << std::endl;
+      ss << "/* " << std::setw( 4 ) << g_count << " */";
+      ss << "filter.size( { (SizeType)" << std::setw( 2 )<< size << ", (SizeType)" << std::setw( 2 ) << size << " } ); ";
+      ss << "gabor( filter, math::geometry::deg2rad( " << std::setw( 3 ) << angle << "), 0.618975, 0" << ", {" << press[0] << "," << press[1] << "} );";
+
+      g_ofs << ss.str() << std::endl;
+      g_table.push_back( ss.str() );
 
       ++g_count;
     }
   }
  }
 
-void make_gabor_non_simetric( std::vector<Filter>  & bank, SizeType const& size_begin, SizeType const& size_end, SizeType const& rotation_total )
+void make_gabor_non_simetric( std::vector<Filter>  & bank, SizeType const& size_begin, SizeType const& size_end, SizeType const& rotation_total, Scalar2DType const& press = { 1,1 } )
  {
   for( int size = (int)size_begin; size < (int)size_end; size += 2 )
   {
     for( int index = 0; index < rotation_total; ++index )
     {
+      std::stringstream ss;
       double angle = index * 360.0 / rotation_total;
       //if( 180 - 10 < angle ) continue;
       //if( angle < 10 ) continue;
@@ -167,14 +196,17 @@ void make_gabor_non_simetric( std::vector<Filter>  & bank, SizeType const& size_
       bank.resize( bank.size() + 1 );
       auto& filterB = bank.back();
       filterB.size( { (SizeType)size, (SizeType)size } );
-      gabor( filterB, math::geometry::deg2rad( angle ), 0.5, math::constants::PHI / 2.0 );
+      gabor( filterB, math::geometry::deg2rad( angle ), 0.5, math::constants::PHI / 2.0, press );
       save( "gabor[" + format( (int)g_count, 3 ) + "_B_" + format( size, 3 ) + "_" + format( (int)(angle), 3 ) + "].png", filterB );
-
-      g_ofs << "/* " << std::setw( 4 ) << g_count << " */";
-      g_ofs << "filter.size( { (SizeType)" << std::setw( 2 ) << size << ", (SizeType)" << std::setw( 2 ) << size << " } ) ; ";
-      g_ofs << "gabor( filter, math::geometry::deg2rad( " << std::setw( 3 ) <<angle << " ), 0.5, math::constants::PHI / 2.0 );" << std::endl;
-
       normalize( filterB );
+
+      ss << "/* " << std::setw( 4 ) << g_count << " */";
+      ss << "filter.size( { (SizeType)" << std::setw( 2 ) << size << ", (SizeType)" << std::setw( 2 ) << size << " } ); ";
+      ss << "gabor( filter, math::geometry::deg2rad( " << std::setw( 3 ) <<angle << " ), 0.5, math::constants::PHI / 2.0" << ", {" << press[0] << "," << press[1] << "} );";
+
+      g_ofs << ss.str() << std::endl;
+      g_table.push_back( ss.str() );
+
       ++g_count;
     }
   }
@@ -188,15 +220,21 @@ StereoConvolveMatch::StereoConvolveMatch()
   // make_gabor1( m_bank );
   //make_gabor2( m_bank );
   //make_gabor3( m_bank );
-  make_gabor4( m_bank );  
+  //make_gabor4( m_bank );  
   //make_gabor5( m_bank );
   //make_laplace0( m_bank );
+  
+  make_gabor_simetric( m_bank, 7, 24, 12, {1,1} );
+  make_gabor_simetric( m_bank, 7, 24, 12, {2,1} );
+  make_gabor_simetric( m_bank, 7, 24, 12, {1,2} );
+  make_gabor_non_simetric( m_bank, 6, 25, 24, {1,1} );
+  make_gabor_non_simetric( m_bank, 6, 25, 24, {2,1} );
+  make_gabor_non_simetric( m_bank, 6, 25, 24, {1,2} );
 
  //make_laplace( m_bank, 6,65 );
 
   //make_gabor_simetric( m_bank, 7, 14, 12 );
   //make_gabor_non_simetric( m_bank, 6, 13, 24 );
- 
 /*
   make_gabor_simetric( m_bank, 7, 10, 12 );
   make_gabor_non_simetric( m_bank, 6, 11, 12 );
@@ -215,7 +253,7 @@ StereoConvolveMatch::StereoConvolveMatch()
 
   make_gabor_simetric( m_bank, 21, 25, 12 );
   make_gabor_non_simetric( m_bank, 26, 31, 12 );
-  */
+*/
   g_ofs.close();
 
   m_restriction.resize( m_bank.size() );
@@ -248,10 +286,10 @@ void StereoConvolveMatch::process( ImageType & disparity, ImageType const& left,
   m_square.init( width, height );
 
   //for( SizeType line=150; line <  170 ; ++line )
-  //for( SizeType line=0; line <  150 ; ++line )
+  for( SizeType line=0; line <  100 ; ++line )
   //for( SizeType line=200; line <  270 ; ++line )
   //for( SizeType line=0; line <  100 ; ++line )
-  for( SizeType line= 0; line <  left.rows ; ++line )
+  //for( SizeType line= 0; line <  left.rows ; ++line )
    {
     //std::cout << std::setw(6) << line << " - ";
     process_P( line, left, right );

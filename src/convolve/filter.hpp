@@ -50,5 +50,5 @@ extern void normalize( Filter& filer );
 extern void from_image( Filter& filter, cv::Mat const& gray, std::array<int, 2> const& location );
 
 extern void gauss( Filter & filter );
-extern void gabor( Filter & filter, double const angle, double const& frequency, double const& shift );
+extern void gabor( Filter & filter, double const angle, double const& frequency, double const& shift, std::array<double, 2> const& press={1,2} );
 extern void laplace( Filter & filter, double const& frequency, double const& shift );

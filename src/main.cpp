@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <cstddef>
 #include <iomanip>
 #include <vector>
@@ -124,7 +125,7 @@ void load_files( )
   std::string dataRoot = "c:/work/code/cpp/prj/disparity/data";
 
   load_case( g_collection["Cloth1"], dataRoot + "/Cloth1", "view1.png", "view5.png", "disp1.png", 3 );
- 
+  return;
   load_case( g_collection["poster1"], dataRoot + "/poster1", "im2.png",    "im8.png", "disp2.png", 3 );
   load_case( g_collection["circle"], dataRoot  + "/circle",   "untitled-L.png", "untitled-R.png", "disparity.png", 1 );
   load_case( g_collection["cubes1"], dataRoot  + "/cubes1",  "cube-L.png", "cube-R.png", "disparity.png", 1 );
@@ -295,23 +296,22 @@ int main_convolve_increment( int argc, char* argv[] )
 
     convolve.initialize( left, right );
     convolve.m_restriction.clear();
-    convolve.m_restriction.push_back( 6 ); 
-    convolve.m_restriction.push_back( 15 ); 
-    convolve.m_restriction.push_back( 22 ); 
-    convolve.m_restriction.push_back( 55 ); 
-    convolve.m_restriction.push_back( 62 ); 
-    convolve.m_restriction.push_back( 76 ); 
-    convolve.m_restriction.push_back( 82 ); 
-    convolve.m_restriction.push_back( 123 ); 
-    convolve.m_restriction.push_back( 129 ); 
-    convolve.m_restriction.push_back( 171 ); 
-    convolve.m_restriction.push_back( 178 ); 
+ 
+    //extern int findIndex( std::string const& signature );
+    //convolve.m_restriction.push_back( findIndex( "filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );" ) );
+    //convolve.m_restriction.push_back( findIndex( "filter.size( { (SizeType)26, (SizeType)26 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+    //convolve.m_restriction.push_back( findIndex( "filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );" ) );
+    //convolve.m_restriction.push_back( findIndex( "filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );" ) );
+    //convolve.m_restriction.push_back( findIndex( "filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+    //convolve.m_restriction.push_back( findIndex( "filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+    //convolve.m_restriction.push_back( findIndex( "filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );" ) );
+    //convolve.m_restriction.push_back( findIndex( "filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );" ) );
+    //convolve.m_restriction.push_back( findIndex( "filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {1,1} );"  ) );
 
     convolve.process( disparity, left, right );
     cv::imwrite( "disparity_" + prefix + number + postfix + ".png", item.second.m_scale * disparity );
 
-    continue;
-    /**/
+   // continue;
  
     int counter = 0;
  
@@ -340,7 +340,7 @@ int main_convolve_increment( int argc, char* argv[] )
 
         convolve.process( disparity, left, right );
 
-          auto quaity = compare( item.second.m_scale * disparity, item.second.m_disprity, tolerance_compare );
+        auto quaity = compare( item.second.m_scale * disparity, item.second.m_disprity, tolerance_compare );
 
         if( max_quaity < quaity )
          {
@@ -349,16 +349,21 @@ int main_convolve_increment( int argc, char* argv[] )
           winner_position = position;
           winner_index = index;
           best_quaity = std::max( max_quaity, best_quaity );
+          
+          number = format( (int)quaity, 6 ) + "_";
+          postfix = format( (int)cycle_counter, 6 );
 
+          std::ofstream ofs( "disparity_" + prefix + number + postfix + ".txt", std::ios_base::app );
+          ofs << "--- --- --- " << std::endl;
           std::cout << "Quality: " << quaity <<"; C:"<< cycle_counter << "; P:"  << position << "-> ";
           std::cout <<"[" << std::setw( 3 ) << convolve.m_restriction.size() << "]";
           for( auto index : convolve.m_restriction )
            {
+            extern std::vector<std::string> g_table;
             std::cout << "(" << index << ");_";
+            if( ( 0 < index) && ( index < g_table.size() ) ) ofs << g_table[ index] << std::endl;
            }
 
-          number = format( (int)quaity, 6 ) + "_";
-          postfix = format( (int)cycle_counter, 6 );
           max_quaity = (int)quaity;
           std::cout << "***";
           cv::imwrite( "disparity_" + prefix + number + postfix + ".png", item.second.m_scale * disparity );
@@ -395,11 +400,12 @@ int main_convolve_increment( int argc, char* argv[] )
     if( false == winner_have )
      {
       convolve.m_restriction.insert( convolve.m_restriction.begin(), -1 );
-      //convolve.m_square.m_trashold = 0.1 * convolve.m_restriction.size();
-      }
+    //convolve.m_square.m_trashold = 0.1 * convolve.m_restriction.size();
+      std::cout << "+";
+     }
 
     std::sort( convolve.m_restriction.rbegin(), convolve.m_restriction.rend() );
-    std::cout << "-";
+    std::cout << "o";
    }
   }
 
@@ -539,8 +545,8 @@ int main_rest( int argc, char *argv[] )
 
 int main( int argc, char* argv[] )
  {
-  main_single( argc, argv );
+  //main_single( argc, argv );
   //main_convolve_combination(  argc,  argv );
-  //main_convolve_increment(  argc,  argv );
+  main_convolve_increment(  argc,  argv );
   //main_rest( argc, argv );
  }

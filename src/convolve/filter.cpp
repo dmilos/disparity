@@ -106,16 +106,16 @@ void gauss( Filter& filter )
 
  }
 
-void gabor( Filter& filter, double const angle, double const& frequency, double const& shift )
+void gabor( Filter& filter, double const angle, double const& frequency, double const& shift, std::array<double,2> const& press )
  {
-  double scaleX = 1;//::math::constants::GOLD;
+   double scaleX = 1;//::math::constants::GOLD;
   for( int y=0 ; y < filter.size()[1] ; ++ y )
    {
-    auto V = ::math::function::any_to_any<double>( y, 0, (double)filter.size()[1]-1, -1, +1 );
+    auto V = press[1] * ::math::function::any_to_any<double>( y, 0, (double)filter.size()[1] - 1, -1, +1 );
 
      for( int x=0 ; x < filter.size()[0] ; ++ x )
      {
-      auto U = ::math::function::any_to_any<double>( x, 0, (double)filter.size()[0]-1, -1, +1 );
+      auto U = press[0] * ::math::function::any_to_any<double>( x, 0, (double)filter.size()[0]-1, -1, +1 );
       auto D = sqrt( U*U + V*V );
       if( 1.0 < D ) 
        {
@@ -129,8 +129,8 @@ void gabor( Filter& filter, double const angle, double const& frequency, double 
   }
 
  }
- 
- void laplace( Filter& filter, double const& frequency, double const& shift )
+
+void laplace( Filter& filter, double const& frequency, double const& shift )
  {
   for( int y=0 ; y < filter.size()[1] ; ++ y )
    {
