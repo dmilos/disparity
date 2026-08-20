@@ -1,8 +1,5 @@
-mkdir _build
 
-cd _build
-
-%prg_cmake% ..
+cmake -B _build -S .
 
 
 pause
