@@ -62,4 +62,6 @@ class Square
     std::vector< IntegerType > m_disparityB;
 };
 
+extern void save(std::string const& name, Square const& Square);
+
 }

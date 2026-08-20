@@ -8,91 +8,437 @@ void make_gabor0( std::vector<Filter>  & bank )
  {
   typedef std::size_t  SizeType;
   Filter filter;
-
-  /*    2 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 22.5 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*    5 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 45 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-  /*    6 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 67.5 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   12 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.618975, 0 );  normalize( filter ); bank.push_back( filter );
-  /*   15 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 157.5 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-  /*   20 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 45 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   33 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 0 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-  /*   34 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 22.5 ), 0.618975, 0 );  normalize( filter ); bank.push_back( filter );
-  /*   39 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 67.5 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-  /*   40 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 90 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   46 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 157.5 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   70 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad( 67.5 ), 0.618975, 0 );  normalize( filter ); bank.push_back( filter );
-  /*  106 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad( 112.5 ), 0.618975, 0 ); normalize( filter );  bank.push_back( filter );
+/* 1246 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,2} );  normalize( filter ); bank.push_back( filter );
+/* 1143 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {1,2} );  normalize( filter ); bank.push_back( filter );
+/* 1075 */filter.size( { (SizeType)24, (SizeType)24 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize( filter ); bank.push_back( filter );
+/*  933 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize( filter ); bank.push_back( filter );
+/*  925 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize( filter ); bank.push_back( filter );
+/*  581 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,2} );  normalize( filter ); bank.push_back( filter );
+/*  545 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,2} );  normalize( filter ); bank.push_back( filter );
+/*  499 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,2} );  normalize( filter ); bank.push_back( filter );
+/*  447 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} );  normalize( filter ); bank.push_back( filter );
+/*  405 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {2,1} );  normalize( filter ); bank.push_back( filter );
+/*  386 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {2,1} );  normalize( filter ); bank.push_back( filter );
+/*  318 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {2,1} );  normalize( filter ); bank.push_back( filter );
+/*  299 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {2,1} );  normalize( filter ); bank.push_back( filter );
+/*  265 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );  normalize( filter ); bank.push_back( filter );
+/*  194 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );  normalize( filter ); bank.push_back( filter );
+/*  161 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );  normalize( filter ); bank.push_back( filter );
+/*   72 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {1,1} );    normalize(filter); bank.push_back(filter);
   }
+
 void make_gabor1( std::vector<Filter>  & bank )
  {
   typedef std::size_t  SizeType;
 
   Filter filter;
-  /*   44 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*  100 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*    2 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   58 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   14 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   47 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*  192 */filter.size( { (SizeType)24, (SizeType)24 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*    6 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   40 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   97 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*  164 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   21 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-
-
+/* 1122 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/* 1094 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/* 1089 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/* 1055 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {1,2} ); normalize( filter ); bank.push_back( filter );
+/*  798 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} ); normalize( filter ); bank.push_back( filter );
+/*  643 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,3} );                      normalize( filter ); bank.push_back( filter );
+/*  639 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,3} );                      normalize( filter ); bank.push_back( filter );
+/*  628 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,3} );                      normalize( filter ); bank.push_back( filter );
+/*  621 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,3} );                      normalize( filter ); bank.push_back( filter );
+/*  618 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,3} );                      normalize( filter ); bank.push_back( filter );
+/*  569 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,2} );                      normalize( filter ); bank.push_back( filter );
+/*  548 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,2} );                      normalize( filter ); bank.push_back( filter );
+/*  540 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {1,2} );                      normalize( filter ); bank.push_back( filter );
+/*  139 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,1} );                      normalize( filter ); bank.push_back( filter );
 }
+
 void make_gabor2( std::vector<Filter>  & bank )
  {
   typedef std::size_t  SizeType;
   Filter filter;
-/*   94 */filter.size( { (SizeType)12, (SizeType)12 } ) ; gabor( filter, math::geometry::deg2rad( 330 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*   92 */filter.size( { (SizeType)12, (SizeType)12 } ) ; gabor( filter, math::geometry::deg2rad( 300 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*   90 */filter.size( { (SizeType)12, (SizeType)12 } ) ; gabor( filter, math::geometry::deg2rad( 270 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*   89 */filter.size( { (SizeType)12, (SizeType)12 } ) ; gabor( filter, math::geometry::deg2rad( 255 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*   87 */filter.size( { (SizeType)12, (SizeType)12 } ) ; gabor( filter, math::geometry::deg2rad( 225 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*   84 */filter.size( { (SizeType)12, (SizeType)12 } ) ; gabor( filter, math::geometry::deg2rad( 180 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*   44 */filter.size( { (SizeType) 8, (SizeType) 8 } ) ; gabor( filter, math::geometry::deg2rad( 300 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*   40 */filter.size( { (SizeType) 8, (SizeType) 8 } ) ; gabor( filter, math::geometry::deg2rad( 240 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*   18 */filter.size( { (SizeType) 6, (SizeType) 6 } ) ; gabor( filter, math::geometry::deg2rad( 270 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*   12 */filter.size( { (SizeType) 6, (SizeType) 6 } ) ; gabor( filter, math::geometry::deg2rad( 180 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
+/* 2289 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/* 2254 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/* 2091 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {1,2} ); normalize( filter ); bank.push_back( filter );
+/* 1773 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {2,1} ); normalize( filter ); bank.push_back( filter );
+/* 1765 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {2,1} ); normalize( filter ); bank.push_back( filter );
+/* 1366 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/* 1268 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/* 1290 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/*  975 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} ); normalize( filter ); bank.push_back( filter );
+/*  940 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,2} ); normalize( filter ); bank.push_back( filter );
+/*  583 */filter.size( { (SizeType)29, (SizeType)29 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {2,1} ); normalize( filter ); bank.push_back( filter );
+/*  426 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {2,1} ); normalize( filter ); bank.push_back( filter );
+/*  383 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {2,1} ); normalize( filter ); bank.push_back( filter );
+/*  373 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} ); normalize( filter ); bank.push_back( filter );
+/*  170 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} ); normalize( filter ); bank.push_back( filter );
+/*   72 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {1,1} ); normalize( filter ); bank.push_back( filter );
+/*    9 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} ); normalize( filter ); bank.push_back( filter );
 
-
-  }
+}
 void make_gabor3( std::vector<Filter>  & bank )
  {
   typedef std::size_t  SizeType;
   Filter filter;
-  /*   77 */filter.size( { (SizeType)13, (SizeType)13 } );  gabor( filter, math::geometry::deg2rad( 75 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   72 */filter.size( { (SizeType)13, (SizeType)13 } ) ; gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   43 */filter.size( { (SizeType)10, (SizeType)10 } );  gabor( filter, math::geometry::deg2rad( 105 ), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-  /*   16 */filter.size( { (SizeType) 8, (SizeType) 8 } ) ; gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0 ); normalize( filter );  bank.push_back( filter );
-  /*    5 */filter.size( { (SizeType)7, (SizeType)7 } );    gabor( filter, math::geometry::deg2rad( 75 ), 0.618975, 0 ); normalize( filter );   bank.push_back( filter );
- }
+//--- --- --- sawtooth-crop;  2918
+/* 2129 */filter.size( { (SizeType)30, (SizeType)30 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {3,1} ); normalize(filter); bank.push_back(filter);
+/* 2273 */filter.size( { (SizeType)32, (SizeType)32 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {3,1} ); normalize(filter); bank.push_back(filter);
+/* 2213 */filter.size( { (SizeType)31, (SizeType)31 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {3,1} ); normalize(filter); bank.push_back(filter);
+/* 2039 */filter.size( { (SizeType)29, (SizeType)29 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} ); normalize(filter); bank.push_back(filter);
+/* 1585 */filter.size( { (SizeType)24, (SizeType)24 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {3,1} ); normalize(filter); bank.push_back(filter);
+/* 1119 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {2,1} );normalize( filter ); bank.push_back( filter );
+/*  839 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );normalize( filter ); bank.push_back( filter );
+/*  834 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {3,1} );normalize( filter ); bank.push_back( filter );
+/*  689 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {3,1} ); normalize( filter ); bank.push_back( filter );
+/*  504 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} ); normalize( filter ); bank.push_back( filter );                      
+/*  408 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                      normalize( filter ); bank.push_back( filter );
+/*  339 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {1,2} ); normalize( filter ); bank.push_back( filter );
+/*  288 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                      normalize( filter ); bank.push_back( filter );
+/*  277 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );                      normalize( filter ); bank.push_back( filter );
+/*  255 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} );                      normalize( filter ); bank.push_back( filter );
+/*  178 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/*  119 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );                      normalize( filter ); bank.push_back( filter );
+/*    9 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );                      normalize( filter ); bank.push_back( filter );
+
+
+}
 void make_gabor4( std::vector<Filter>  & bank )
  {
   typedef std::size_t  SizeType;
   Filter filter;
+/* 2273 */filter.size( { (SizeType)32, (SizeType)32 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {3,1} );  normalize( filter ); bank.push_back( filter );
+/* 2039 */filter.size( { (SizeType)29, (SizeType)29 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );  normalize( filter ); bank.push_back( filter );
+/* 1871 */filter.size( { (SizeType)28, (SizeType)28 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );  normalize( filter ); bank.push_back( filter );
+/* 1751 */filter.size( { (SizeType)26, (SizeType)26 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {1,1} ); normalize( filter ); bank.push_back( filter );
+/* 1585 */filter.size( { (SizeType)24, (SizeType)24 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {3,1} ); normalize( filter ); bank.push_back( filter );
+/* 1534 */filter.size( { (SizeType)24, (SizeType)24 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/*  280 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {2,1} ); normalize( filter ); bank.push_back( filter );
+/* 1078 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*  991 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/*  835 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {3,1} ); normalize( filter ); bank.push_back( filter );
+/*  693 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {3,1} ); normalize(filter); bank.push_back(filter);
+/*  636 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} ); normalize( filter ); bank.push_back( filter );
+/*  441 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,2} ); normalize( filter ); bank.push_back( filter );
+/*  350 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,3} ); normalize( filter ); bank.push_back( filter );
+/*  317 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {2,1} ); normalize( filter ); bank.push_back( filter );
+/*  255 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} ); normalize(filter); bank.push_back(filter);
+/*  178 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*    9 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} ); normalize(filter); bank.push_back(filter);
 
-/*    6 */filter.size( { (SizeType) 7, (SizeType) 7 } ) ; gabor( filter, math::geometry::deg2rad(  90.0), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-/*   15 */filter.size( { (SizeType) 8, (SizeType) 8 } ) ; gabor( filter, math::geometry::deg2rad(  45.0), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-/*   22 */filter.size( { (SizeType) 8, (SizeType) 8 } ) ; gabor( filter, math::geometry::deg2rad( 150.0), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-/*   55 */filter.size( { (SizeType)11, (SizeType)11 } ) ; gabor( filter, math::geometry::deg2rad( 105.0), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-/*   62 */filter.size( { (SizeType)12, (SizeType)12 } ) ; gabor( filter, math::geometry::deg2rad(  30.0), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-/*   76 */filter.size( { (SizeType)13, (SizeType)13 } ) ; gabor( filter, math::geometry::deg2rad(  60.0), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-/*   82 */filter.size( { (SizeType)13, (SizeType)13 } ) ; gabor( filter, math::geometry::deg2rad( 150.0), 0.618975, 0 ); normalize( filter ); bank.push_back( filter );
-/*  123 */filter.size( { (SizeType) 8, (SizeType) 8 } ) ; gabor( filter, math::geometry::deg2rad( 225.0 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*  129 */filter.size( { (SizeType) 8, (SizeType) 8 } ) ; gabor( filter, math::geometry::deg2rad( 315.0 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*  171 */filter.size( { (SizeType)12, (SizeType)12 } ) ; gabor( filter, math::geometry::deg2rad( 225.0 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
-/*  178 */filter.size( { (SizeType)12, (SizeType)12 } ) ; gabor( filter, math::geometry::deg2rad( 330.0 ), 0.5, math::constants::PHI / 2.0 ); normalize( filter ); bank.push_back( filter );
+}
 
- }
 void make_gabor5( std::vector<Filter>  & bank )
  {
   typedef std::size_t  SizeType;
   Filter filter;
+/* 1265 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 2307 */filter.size( { (SizeType)32, (SizeType)32 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 2273 */filter.size( { (SizeType)32, (SizeType)32 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 2268 */filter.size( { (SizeType)32, (SizeType)32 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 2228 */filter.size( { (SizeType)32, (SizeType)32 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 2222 */filter.size( { (SizeType)32, (SizeType)32 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 2123 */filter.size( { (SizeType)30, (SizeType)30 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 2033 */filter.size( { (SizeType)29, (SizeType)29 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 2007 */filter.size( { (SizeType)29, (SizeType)29 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,3} );                       normalize(filter); bank.push_back(filter);
+/* 1985 */filter.size( { (SizeType)29, (SizeType)29 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1910 */filter.size( { (SizeType)28, (SizeType)28 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1673 */filter.size( { (SizeType)25, (SizeType)25 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1631 */filter.size( { (SizeType)25, (SizeType)25 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1534 */filter.size( { (SizeType)24, (SizeType)24 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,3} );                       normalize(filter); bank.push_back(filter);
+/* 1515 */filter.size( { (SizeType)24, (SizeType)24 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} );                       normalize(filter); bank.push_back(filter);
+/* 1368 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1245 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {1,2} );  normalize(filter); bank.push_back(filter);
+/* 1151 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1081 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1071 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {1,3} );  normalize(filter); bank.push_back(filter);
+/*  944 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+
  }
+
+void make_gabor6( std::vector<Filter>  & bank )
+ {
+  typedef std::size_t  SizeType;
+  Filter filter;
+
+/* 1012 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {3,1} );                          normalize(filter); bank.push_back(filter);
+/*  969 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*  932 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,3} );                          normalize(filter); bank.push_back(filter);
+/*  917 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,2} );                          normalize(filter); bank.push_back(filter);
+/*  915 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} );                          normalize(filter); bank.push_back(filter);
+/*  905 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*  873 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {3,1} );     normalize(filter); bank.push_back(filter);
+/*  850 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );     normalize(filter); bank.push_back(filter);
+/*  826 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );                          normalize(filter); bank.push_back(filter);
+/*  824 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {2,1} );                          normalize(filter); bank.push_back(filter);
+/*  790 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*  906 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*  680 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {2,1} );     normalize(filter); bank.push_back(filter);
+/*  617 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,2} );                          normalize(filter); bank.push_back(filter);
+/*  526 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,2} );     normalize(filter); bank.push_back(filter);
+/*  524 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {1,2} );     normalize(filter); bank.push_back(filter);
+/*  509 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {3,1} );     normalize(filter); bank.push_back(filter);
+/*  478 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {3,1} );                          normalize(filter); bank.push_back(filter);
+/*  462 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {2,1} );                          normalize(filter); bank.push_back(filter);
+/*  430 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*  426 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*  425 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*  395 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,3} );                          normalize(filter); bank.push_back(filter);
+/*  321 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {2,1} );     normalize(filter); bank.push_back(filter);
+/*  270 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,3} );                          normalize(filter); bank.push_back(filter);
+/*  188 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*  176 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {1,3} );     normalize(filter); bank.push_back(filter);
+/*   68 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*   63 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+/*    5 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );                          normalize(filter); bank.push_back(filter);
+
+ }
+
+void make_gabor7(std::vector<Filter>& bank)
+ {
+    typedef std::size_t  SizeType;
+    Filter filter;
+
+/* 1102 */filter.size( { (SizeType)24, (SizeType)24 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,2} ); normalize(filter); bank.push_back(filter);
+/* 1025 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} ); normalize(filter); bank.push_back(filter);
+/*  694 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*  514 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*  478 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {3,1} ); normalize(filter); bank.push_back(filter);
+/*  456 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} ); normalize(filter); bank.push_back(filter);
+/*  450 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*  450 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*  447 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*  440 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,2} ); normalize(filter); bank.push_back(filter);
+/*  429 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} ); normalize(filter); bank.push_back(filter);
+/*  421 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} ); normalize(filter); bank.push_back(filter);
+/*  391 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*  298 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {3,1} ); normalize(filter); bank.push_back(filter);
+/*  291 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {3,1} ); normalize(filter); bank.push_back(filter);
+/*  288 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} ); normalize(filter); bank.push_back(filter);
+/*  276 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} ); normalize(filter); bank.push_back(filter);
+/*  272 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*  217 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} ); normalize(filter); bank.push_back(filter);
+/*  135 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} ); normalize(filter); bank.push_back(filter);
+/*   88 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,3} ); normalize(filter); bank.push_back(filter);
+/*   74 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,2} ); normalize(filter); bank.push_back(filter);
+/*   64 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} ); normalize(filter); bank.push_back(filter);
+/*   27 */filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,3} ); normalize(filter); bank.push_back(filter);
+
+ }
+void make_gabor8(std::vector<Filter>& bank)
+ {
+  typedef std::size_t  SizeType;
+  Filter filter;
+
+/* 1910 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,3} );    normalize(filter); bank.push_back(filter);
+/* 1822 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,2} );                         normalize(filter); bank.push_back(filter);
+/* 1815 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} );                         normalize(filter); bank.push_back(filter);
+/* 1804 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );                         normalize(filter); bank.push_back(filter);
+/* 1750 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );    normalize(filter); bank.push_back(filter);
+/* 1746 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} );    normalize(filter); bank.push_back(filter);
+/* 1688 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );                         normalize(filter); bank.push_back(filter);
+/* 1444 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );                         normalize(filter); bank.push_back(filter);
+/*  908 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {1,1} );    normalize(filter); bank.push_back(filter);
+/*  730 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );                         normalize(filter); bank.push_back(filter);
+/*  661 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {1,1} );    normalize(filter); bank.push_back(filter);
+/*  485 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );                         normalize(filter); bank.push_back(filter);
+/*  456 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,2} );    normalize(filter); bank.push_back(filter);
+/*  369 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );                         normalize(filter); bank.push_back(filter);
+/*  361 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );                         normalize(filter); bank.push_back(filter);
+/*  307 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,1} );    normalize(filter); bank.push_back(filter);
+/*  150 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,3} );                         normalize(filter); bank.push_back(filter);
+
+ }
+
+void make_gabor9(std::vector<Filter>& bank)
+ {
+  typedef std::size_t  SizeType;
+  Filter filter;
+/* 2013 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 2005 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1993 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 1977 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1969 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1967 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1959 */filter.size( { (SizeType)23, (SizeType)23 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1893 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1887 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1884 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1873 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 1859 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1852 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1849 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1845 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1837 */filter.size( { (SizeType)22, (SizeType)22 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1770 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1766 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1764 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1763 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 1737 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1730 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1728 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1726 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1721 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1718 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1716 */filter.size( { (SizeType)21, (SizeType)21 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1652 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1646 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1644 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1635 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 1632 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 1618 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1613 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1609 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1608 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1605 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1599 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1596 */filter.size( { (SizeType)20, (SizeType)20 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1533 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1527 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1524 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1513 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 1500 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/* 1497 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1491 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1488 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1487 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1477 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1451 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1443 */filter.size( { (SizeType)19, (SizeType)19 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1413 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1407 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1404 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1380 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/* 1377 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1371 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1368 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1356 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1323 */filter.size( { (SizeType)18, (SizeType)18 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1284 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1260 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/* 1258 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1250 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1246 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1241 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1237 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1211 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1203 */filter.size( { (SizeType)17, (SizeType)17 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1173 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1166 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1152 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 1151 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/* 1142 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/* 1138 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1130 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1126 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1121 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1116 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1090 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1082 */filter.size( { (SizeType)16, (SizeType)16 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/* 1055 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1046 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/* 1040 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 1033 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/* 1020 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/* 1019 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1010 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/* 1005 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/* 1000 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  996 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  971 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  969 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  962 */filter.size( { (SizeType)15, (SizeType)15 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  924 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  915 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/*  900 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  899 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  891 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  885 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  877 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  851 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  843 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  813 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  805 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  794 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/*  790 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  784 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  780 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  778 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  769 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  766 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  759 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  756 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  729 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  723 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  720 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  709 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {1,3} );  normalize(filter); bank.push_back(filter);
+/*  693 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  687 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  666 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  660 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  656 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  651 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  647 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  637 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  627 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,3} );                       normalize(filter); bank.push_back(filter);
+/*  609 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  603 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  600 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  575 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  566 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  549 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  543 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  528 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  526 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  518 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  507 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,3} );                       normalize(filter); bank.push_back(filter);
+/*  491 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  488 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  484 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  481 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  459 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {1,2} );  normalize(filter); bank.push_back(filter);
+/*  444 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  441 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/*  435 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/*  419 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  410 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  408 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  407 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  397 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  390 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,3} );                       normalize(filter); bank.push_back(filter);
+/*  380 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,2} );                       normalize(filter); bank.push_back(filter);
+/*  375 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} );                       normalize(filter); bank.push_back(filter);
+/*  370 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  363 */filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  353 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {1,3} );  normalize(filter); bank.push_back(filter);
+/*  335 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  325 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  311 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  307 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  302 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  286 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  277 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  255 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,2} );                       normalize(filter); bank.push_back(filter);
+/*  251 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  244 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  241 */filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  215 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {3,1} );  normalize(filter); bank.push_back(filter);
+/*  188 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  183 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  180 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*  179 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  168 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*  156 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*  151 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,3} );                       normalize(filter); bank.push_back(filter);
+/*  131 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  123 */filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*  100 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.5, math::constants::PHI / 2.0, {1,2} );  normalize(filter); bank.push_back(filter);
+/*   82 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/*   73 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {2,1} );  normalize(filter); bank.push_back(filter);
+/*   67 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*   60 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );  normalize(filter); bank.push_back(filter);
+/*   51 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {3,1} );                       normalize(filter); bank.push_back(filter);
+/*   36 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} );                       normalize(filter); bank.push_back(filter);
+/*   28 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,3} );                       normalize(filter); bank.push_back(filter);
+/*    9 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*    5 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+/*    2 */filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );                       normalize(filter); bank.push_back(filter);
+
+}
 
 void make_laplace0( std::vector<Filter>  & bank )
  {
@@ -104,7 +450,6 @@ void make_laplace0( std::vector<Filter>  & bank )
 typedef std::size_t SizeType;
 typedef double  ScalarType;
 typedef std::array<ScalarType, 2>  Scalar2DType;
-
 
 SizeType g_count=0;
 std::ofstream g_ofs( "filter-table.txt" );
@@ -132,10 +477,10 @@ void make_laplace( std::vector<Filter>& bank, SizeType const& size_begin, SizeTy
     auto& filter = bank.back();
     filter.size( { (SizeType)size, (SizeType)size } );
     laplace( filter, 0.5, 0 );
-    save( "filter_laplace_" + format( (int)g_count, 3 ) +"_"+ format( (int)size, 3 ) +".png", filter );
+    //save( "filter_laplace_" + format( (int)g_count, 3 ) +"_"+ format( (int)size, 3 ) +".png", filter );
     normalize( filter );
 
-    ss << "/ * " << std::setw( 4 ) << g_count << " * /";
+    ss << "/* " << std::setw( 4 ) << g_count << " */";
     ss << "filter.size( { (SizeType)" << size << ", (SizeType)" << size << " } ); ";
     ss << "laplace( filter, 0.5, 0 );"  ;
 
@@ -167,7 +512,7 @@ void make_gabor_simetric( std::vector<Filter>  & bank, SizeType const& size_begi
       auto& filterA = bank.back();
       filterA.size( { (SizeType)size, (SizeType)size } );
       gabor( filterA, math::geometry::deg2rad( angle ), 0.618975, 0, press );
-      save( "gabor[" + format( (int)g_count, 3 ) + "_A_" + format( size, 3 ) + "_" + format( (int)(angle), 3 ) + "].png", filterA );
+      //save( "gabor[" + format( (int)g_count, 3 ) + "_A_" + format( size, 3 ) + "_" + format( (int)(angle), 3 ) + "].png", filterA );
       normalize( filterA );
 
       ss << "/* " << std::setw( 4 ) << g_count << " */";
@@ -189,7 +534,7 @@ void make_gabor_non_simetric( std::vector<Filter>  & bank, SizeType const& size_
     for( int index = 0; index < rotation_total; ++index )
     {
       std::stringstream ss;
-      double angle = index * 360.0 / rotation_total;
+      double angle = index * 180.0 / rotation_total;
       //if( 180 - 10 < angle ) continue;
       //if( angle < 10 ) continue;
       /**/
@@ -197,7 +542,7 @@ void make_gabor_non_simetric( std::vector<Filter>  & bank, SizeType const& size_
       auto& filterB = bank.back();
       filterB.size( { (SizeType)size, (SizeType)size } );
       gabor( filterB, math::geometry::deg2rad( angle ), 0.5, math::constants::PHI / 2.0, press );
-      save( "gabor[" + format( (int)g_count, 3 ) + "_B_" + format( size, 3 ) + "_" + format( (int)(angle), 3 ) + "].png", filterB );
+      //save( "gabor[" + format( (int)g_count, 3 ) + "_B_" + format( size, 3 ) + "_" + format( (int)(angle), 3 ) + "].png", filterB );
       normalize( filterB );
 
       ss << "/* " << std::setw( 4 ) << g_count << " */";
@@ -214,46 +559,60 @@ void make_gabor_non_simetric( std::vector<Filter>  & bank, SizeType const& size_
 
 StereoConvolveMatch::StereoConvolveMatch()
  {
+  m_square.m_range = 160;
   g_count = 0;
 
   //make_gabor0( m_bank );
-  // make_gabor1( m_bank );
+  //make_gabor1( m_bank );
   //make_gabor2( m_bank );
   //make_gabor3( m_bank );
   //make_gabor4( m_bank );  
   //make_gabor5( m_bank );
+  //make_gabor6( m_bank );
+  //make_gabor7( m_bank );
+  //make_gabor8( m_bank );
+   //make_gabor9( m_bank );
   //make_laplace0( m_bank );
-  
-  make_gabor_simetric( m_bank, 7, 24, 12, {1,1} );
-  make_gabor_simetric( m_bank, 7, 24, 12, {2,1} );
-  make_gabor_simetric( m_bank, 7, 24, 12, {1,2} );
-  make_gabor_non_simetric( m_bank, 6, 25, 24, {1,1} );
-  make_gabor_non_simetric( m_bank, 6, 25, 24, {2,1} );
-  make_gabor_non_simetric( m_bank, 6, 25, 24, {1,2} );
 
- //make_laplace( m_bank, 6,65 );
+  int resolution = 12;
+  for( int radius=14; radius < 15; radius+= 1 )
+   {
+    make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 1 } );
+    make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 2 } );
+    make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 3 } );
+    //make_gabor_simetric( m_bank, radius, radius+1, resolution, { 2, 1 } );
+    //make_gabor_simetric( m_bank, radius, radius+1, resolution, { 3, 1 } );
+    //if( 0 ==( radius%2 ) )
+     {
+      make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 1, 1 } );
+      make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 1, 2 } );
+      make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 1, 3 } );
+      //make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 2, 1 } );
+      //make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 3, 1 } );
+     }
+   }
 
-  //make_gabor_simetric( m_bank, 7, 14, 12 );
-  //make_gabor_non_simetric( m_bank, 6, 13, 24 );
-/*
-  make_gabor_simetric( m_bank, 7, 10, 12 );
-  make_gabor_non_simetric( m_bank, 6, 11, 12 );
+  /*
+  make_gabor_simetric( m_bank, 7, 33, resolution, {1,1} );
 
-  make_gabor_simetric( m_bank, 10, 13, 12 );
-  make_gabor_non_simetric( m_bank, 10, 15, 12 );
- 
-  make_gabor_simetric( m_bank, 13, 16, 12 );
-  make_gabor_non_simetric( m_bank, 14, 19, 12 );
- 
-  make_gabor_simetric( m_bank, 16, 19, 12 );
-  make_gabor_non_simetric( m_bank, 18, 23, 12 );
+  make_gabor_simetric( m_bank, 7, 33, resolution, {2,1} );
+  make_gabor_simetric( m_bank, 7, 33, resolution, {3,1} );
 
-  make_gabor_simetric( m_bank, 19, 22, 12 );
-  make_gabor_non_simetric( m_bank, 22, 27, 12 );
+  make_gabor_simetric( m_bank, 7, 33, resolution, { 1, 2 } );
+  make_gabor_simetric( m_bank, 7, 33, resolution, { 1, 3 } );
 
-  make_gabor_simetric( m_bank, 21, 25, 12 );
-  make_gabor_non_simetric( m_bank, 26, 31, 12 );
-*/
+  make_gabor_non_simetric( m_bank, 6, 33, resolution, {1,1} );
+
+  make_gabor_non_simetric(m_bank, 6, 33, resolution, {2,1});
+  make_gabor_non_simetric( m_bank, 6, 33, resolution, {3,1});
+
+  make_gabor_non_simetric( m_bank, 6, 33, resolution, {1,2} );
+  make_gabor_non_simetric( m_bank, 6, 33, resolution, {1,3} );
+  */
+
+ // make_laplace( m_bank, 6, 65 );
+ //make_laplace( m_bank, 6, 65 );
+
   g_ofs.close();
 
   m_restriction.resize( m_bank.size() );
@@ -285,11 +644,16 @@ void StereoConvolveMatch::process( ImageType & disparity, ImageType const& left,
  
   m_square.init( width, height );
 
-  //for( SizeType line=150; line <  170 ; ++line )
-  for( SizeType line=0; line <  100 ; ++line )
-  //for( SizeType line=200; line <  270 ; ++line )
-  //for( SizeType line=0; line <  100 ; ++line )
-  //for( SizeType line= 0; line <  left.rows ; ++line )
+  extern int g_line;
+
+  g_line = g_line % left.rows;
+  if( left.rows < g_line + 8) g_line = 0;;
+
+  //for( SizeType line=295; line <  316 ; ++line )
+  //for( SizeType line= 0;  line < 75; ++line )
+  //for( SizeType line=133; line <  143 ; ++line )
+  //for( SizeType line= g_line; line < g_line + 8; ++line )
+  for( SizeType line= 0; line <  left.rows ; ++line )
    {
     //std::cout << std::setw(6) << line << " - ";
     process_P( line, left, right );
@@ -300,6 +664,7 @@ void StereoConvolveMatch::process( ImageType & disparity, ImageType const& left,
     m_square.processR();
     m_square.disparityR();
     processB( disparity, line);
+    //save( "line_" + std::to_string(line) + ".png", m_square );
     //std::cout << "|" << std::endl;;
    }
  }
@@ -312,7 +677,7 @@ void StereoConvolveMatch::process_P(  SizeType const& line, ImageType const& lef
   ScalarType maximum = 0;
   for( SizeType xL = 0; xL < width; ++xL )
    {
-    for( SizeType xR = std::max<int>( 0, (int)xL - 100 ); xR < xL; ++xR )
+    for( SizeType xR = std::max<int>( 0, (int)xL - (int)m_square.m_range ); xR < xL; ++xR )
      //for( SizeType xR = 0; xR < height; ++xR )
      {
       auto d = distance( { xL, line }, { xR, line } );

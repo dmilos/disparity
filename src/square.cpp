@@ -8,7 +8,7 @@ Square::Square()
   m_width  = 0;
   m_height = 0;
   m_range     = 10000;   //!< in pixels
-  m_trashold  = 10000;   //!<minimal accepteal distance
+  m_trashold  = 10000;   //!<minimal acceptebl distance
   m_proximity = 0;       //!< distance from other
   m_infinity  = 10000.0; //!< lrgest distance
 }
@@ -338,5 +338,26 @@ bool Square::importL( ImageType const& image, SizeType const& line )
   return true;
  }
 
+ void save(std::string const& name, Square const& square )
+ {
+  cv::Mat image( (int)square.m_height, (int)square.m_width, CV_64FC1, const_cast<void*>( (void*)square.m_distance.data() ) );
+
+  double maximum = square.m_distance.data()[ 1 ]; 
+  double minimum = square.m_distance.data()[ 1 ];
+
+  for( int y = 0; y < square.m_height; ++y )
+   {
+    for (int x = 0; x < square.m_width; ++x)
+     {
+      if( x <= y) continue;
+      if( y + square.m_range <= x +1 ) continue;
+
+      minimum = std::min( minimum, square.m_distance.data()[y * square.m_width + x]);
+      maximum = std::max( maximum, square.m_distance.data()[y * square.m_width + x]);
+     }
+   }
+
+  cv::imwrite( name, 255* (image - minimum)/( maximum-minimum) );
+ }
 
  }
