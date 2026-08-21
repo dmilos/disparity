@@ -575,7 +575,7 @@ StereoConvolveMatch::StereoConvolveMatch()
   //make_laplace0( m_bank );
 
   int resolution = 12;
-  for( int radius=14; radius < 15; radius+= 1 )
+  for( int radius=7; radius < 15; radius+= 1 )
    {
     make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 1 } );
     make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 2 } );

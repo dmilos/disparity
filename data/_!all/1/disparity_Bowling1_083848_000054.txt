@@ -1,0 +1,17 @@
+//--- --- --- Bowling1;  83848 _ 54.3444
+//--- --- --- 13
+//--- --- --- 10000 ;  769.231 ;
+//--- --- --- begin:00-1; end:0960
+/*  910 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );
+/*  906 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} );
+/*  902 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,1} );
+/*  857 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,2} );
+/*  850 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );
+/*  848 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );
+/*  844 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );
+/*  841 */filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );
+/*  725 */filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );
+/*  678 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,2} );
+/*  621 */filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,2} );
+/*  552 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,2} );
+/*  493 */filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,2} );
