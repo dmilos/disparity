@@ -6,6 +6,8 @@
 #include <array>
 #include <numeric>
 #include <filesystem>
+#include <algorithm>
+#include <random>
 #include <math/math.hpp>
 #include <color/color.hpp>
 #include <opencv2/opencv.hpp>
@@ -199,7 +201,12 @@ void make_main_bank( )
   make_bank( g_bank, { 15, 15 }, 15.0 * math::constants::PHI_double / 360.0, { 2,1 } );
   make_bank( g_bank, { 15, 15 }, 15.0 * math::constants::PHI_double / 360.0, { 3,1 } );
  
-  //make_bank( g_bank, { 17, 17 }, 1.0 * math::constants::PHI_double / 360.0, { 1,1 } );
+  //make_bank( g_bank, { 17, 17 }, 15.0 * math::constants::PHI_double / 360.0, { 1,1 } );
+  //make_bank( g_bank, { 17, 17 }, 15.0 * math::constants::PHI_double / 360.0, { 1,2 } );
+  //make_bank( g_bank, { 17, 17 }, 15.0 * math::constants::PHI_double / 360.0, { 1,3 } );
+  //make_bank( g_bank, { 17, 17 }, 15.0 * math::constants::PHI_double / 360.0, { 2,1 } );
+  //make_bank( g_bank, { 17, 17 }, 15.0 * math::constants::PHI_double / 360.0, { 3,1 } );
+
   //make_bank( g_bank, { 19, 19 }, 1.0 * math::constants::PHI_double / 360.0, { 1,1 } );
   elevate( g_bank );
    std::cout << "Total: " << g_bank.size() << std::endl;
@@ -208,8 +215,8 @@ void make_main_bank( )
 
 int main_partial( int argc, char* argv[] )
  {
-  int total = 5;
-  int sublen = 5;
+  int total = 15;
+  int sublen = 2;
 
   make_main_bank();
 
@@ -274,13 +281,14 @@ int main_partial( int argc, char* argv[] )
     std::cout << "*" << std::endl;
     if( false == winner_big )
      {
-      ++sublen;    std::cout << "++" << std::endl;
+      //++sublen;   
+      std::cout << "++" << std::endl;
+      std::shuffle( subset.begin(), subset.end(), std::mt19937{ std::random_device{}() } );  
      }
      if( total  < sublen  )
       {
        std::cout << "DONE" << std::endl;
        break;
-      
       }
    }
   return 0;
@@ -292,7 +300,7 @@ int main_total( int argc, char* argv[] )
 
   Filter temp;
   std::vector<int> subset;
-  subset.resize(4);
+  subset.resize(3);
   int counter = 0;
 
   double grand = 1;

@@ -1185,5 +1185,5 @@ int main( int argc, char* argv[] )
   extern int main_partial( int argc, char* argv[] );
   extern int main_total( int argc, char* argv[] );
 
-  return main_total( argc, argv );
+  return main_partial( argc, argv );
  }
