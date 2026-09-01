@@ -83,6 +83,25 @@ void from_image( Filter& filter, cv::Mat const& gray, std::array<int,2> const& l
   }
  }
 
+ void fill( Filter& filter, Filter::ScalarType const& value )
+ {
+   std::fill( filter.data(), filter.data() + filter.size()[0]* filter.size()[1], value );
+ }
+
+void frame( Filter& target, Filter const& source, Filter::SizeType const& size )
+ {
+  target.size( { source.size()[0]+2*size, source.size()[1]+2*size } );
+  fill( target, 0.0 );
+
+  for( Filter::SizeType y=0 ; y < source.size()[1] ; ++ y )
+   {
+     for( Filter::SizeType x=0 ; x < source.size()[0] ; ++ x )
+     {
+      target.set( { x + size, y + size }, source.get( {x,y} ) );
+     }
+   }
+ }
+
 void gauss( Filter& filter )
  {
   for( int y=0 ; y < filter.size()[1] ; ++ y )
@@ -106,7 +125,7 @@ void gauss( Filter& filter )
 
  }
 
-void gabor( Filter& filter, double const angle, double const& frequency, double const& shift, std::array<double,2> const& press )
+void gabor( Filter& filter, double const &angle, double const& frequency, double const& shift, std::array<double,2> const& press )
  {
    double scaleX = 1;//::math::constants::GOLD;
   for( int y=0 ; y < filter.size()[1] ; ++ y )

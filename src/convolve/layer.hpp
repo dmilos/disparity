@@ -31,7 +31,6 @@ class Layer
       return true;
      }
 
-
   public:
    Size2DType m_size;
    ContainerType m_container;

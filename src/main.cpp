@@ -1180,6 +1180,10 @@ int main( int argc, char* argv[] )
  //  main_single( argc, argv );
   //main_convolve_sliding(argc, argv);
   //main_convolve_combination(  argc,  argv );
-  main_convolve_increment(  argc,  argv );
+  //main_convolve_increment(  argc,  argv );
   //main_rest( argc, argv );
+  extern int main_partial( int argc, char* argv[] );
+  extern int main_total( int argc, char* argv[] );
+
+  return main_total( argc, argv );
  }

@@ -8,12 +8,14 @@ project( ${PROJECT_NAME} )
 
 set( SOURCE_CPP  "../src/main.cpp" )
 list( APPEND  SOURCE_CPP "../src/main.cpp" )
+list( APPEND  SOURCE_CPP "../src/main-distance.cpp" )
 list( APPEND  SOURCE_CPP "../src/stereomatch.cpp" )
 list( APPEND  SOURCE_CPP "../src/stereopatchmatch.cpp" )
 list( APPEND  SOURCE_CPP "../src/stereopatchnormgraymatch.cpp" )
 list( APPEND  SOURCE_CPP "../src/stereonormalmatch.cpp" )
 list( APPEND  SOURCE_CPP "../src/stereomatchV1.cpp" )
 list( APPEND  SOURCE_CPP "../src/stereomatchV2.cpp" )
+list( APPEND  SOURCE_CPP "../src/stereomatchedge.cpp" )
 
 
 list( APPEND  SOURCE_CPP "../src/square.cpp" )
@@ -24,11 +26,20 @@ list( APPEND  SOURCE_CPP "../src/convolve/filter.cpp" )
 list( APPEND  SOURCE_CPP "../src/convolve/lasagna.cpp" )
 list( APPEND  SOURCE_CPP "../src/convolve/layer.cpp" )
 list( APPEND  SOURCE_CPP "../src/convolve/stereoconvolvematch.cpp" )
+list( APPEND  SOURCE_CPP "../src/convolve/absolute.cpp" )
+list( APPEND  SOURCE_CPP "../src/convolve/addition.cpp" )
+list( APPEND  SOURCE_CPP "../src/convolve/difference.cpp" )
+list( APPEND  SOURCE_CPP "../src/convolve/summae.cpp" )
+
+
+
 
 list( APPEND  SOURCE_HPP "../src/filter/bilateral.hpp" )
 list( APPEND  SOURCE_HPP "../src/stereomatchV1.hpp" )
 list( APPEND  SOURCE_HPP "../src/stereomatchV2.hpp" )
 
+list( APPEND  SOURCE_HPP "../src/stereomatchedge.hpp" )
+ 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 add_executable(  ${PROJECT_EXE}  ${SOURCE_CPP}  ${SOURCE_HPP}  )
