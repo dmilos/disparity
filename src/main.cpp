@@ -175,23 +175,26 @@ void load_files( )
  {
   std::string dataRoot = "../../data";
 
-  //Case temp0;  load_case( temp0, dataRoot + "/Wood1", "view1.png", "view5.png", "disp1.png", 3);
-  //crop( g_collection["wood-crop"], temp0, { { 250, 0 }, {  250+190, 0+15 } });  //!< Referent
+  //load_case(g_collection["wood"], dataRoot + "/Wood1", "view1.png", "view5.png", "disp1.png", 3);
+  ////Case temp0;  load_case( temp0, dataRoot + "/Wood1", "view1.png", "view5.png", "disp1.png", 3);
+  ////crop( g_collection["wood-crop"], temp0, { { 250, 0 }, {  250+190, 0+15 } });  //!< Referent
   //return;
 
   //Case temp0;  load_case( temp0, dataRoot + "/venus", "im2.png", "im6.png", "disp2.png", 8 );
   //crop( g_collection["venus-crop"], temp0, { { 0, 200 }, { 160, 200+50 } });  //!< Referent
   //return;
 
-  //load_case(g_collection["cones"], dataRoot + "/cones", "im2.png", "im6.png", "disp2.png", 4);
-  ////Case temp0; 
-  ////crop(   g_collection["cones-crop"], temp0, { { 450-80, 170 }, { 450-1, 170 + 130 } } );  //!< medium
+  load_case( g_collection["cones"], dataRoot + "/cones", "im2.png", "im6.png", "disp2.png", 4);
+  Case temp0;  load_case( temp0, dataRoot + "/cones", "im2.png", "im6.png", "disp2.png", 4);
+  //crop(   g_collection["cones-crop"], temp0, { { 350, 170 }, { 450-1, 170 + 130 } } );  //!< medium
+  //crop(   g_collection["cones-crop"], temp0, { { 0, 335 }, { 270, 365 } } );  //!< medium
+  //crop(   g_collection["cones-crop"], temp0, { { 0, 335 }, { 440, 365 } } );  //!< medium
   //////crop( g_collection["cones-crop"], temp0, { { 450-80, 175 }, { 450-1, 175 +  40 } } );  //!< small
-  //return;
+  return;
 
   //load_case( g_collection["cloth"], dataRoot + "/Cloth1", "view1.png", "view5.png", "disp1.png", 3 );
-  //Case temp0;   load_case( temp0, dataRoot + "/Cloth1", "view1.png", "view5.png", "disp1.png", 3);
-  //crop(g_collection["cloth-crop"], temp0, { { 0 * 110, 0 }, { 1 * 110 - 35, 90 } });
+  ////Case temp0;   load_case( temp0, dataRoot + "/Cloth1", "view1.png", "view5.png", "disp1.png", 3);
+  ////crop(g_collection["cloth-crop"], temp0, { { 0 * 110, 0 }, { 1 * 110 - 35, 90 } });
   //return;
 
   //crop(g_collection["cloth-crop"], temp0, { { 2 * 110, 0 }, { 3 * 110 - 35, 90 } });
@@ -701,133 +704,81 @@ int main_convolve_increment( int argc, char* argv[] )
 
 
 //convolve.m_restriction.push_back( findIndex("   " ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.5, math::constants::PHI / 2.0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,2} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,2} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,2} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,2} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {2,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {2,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 165 ), 0.5, math::constants::PHI / 2.0, {3,1} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {2,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {3,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {1,2} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {3,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {2,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,3} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  45 ), 0.5, math::constants::PHI / 2.0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,2} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)14, (SizeType)14 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );" ) );
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,2} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,2} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,2} );"));
-convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,2} );"));
 
- 
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {3,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {3,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 150), 0.618975, 0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,2} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 105 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {3,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} );"));
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 7, (SizeType) 7 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,2} );"));
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad( 120 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  60 ), 0.5, math::constants::PHI / 2.0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad( 135 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {3,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,2} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,2} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 6, (SizeType) 6 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 5, (SizeType) 5 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {1,1} );"));
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 5, (SizeType) 5 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 5, (SizeType) 5 } ); gabor( filter, math::geometry::deg2rad( 105), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 5, (SizeType) 5 } ); gabor( filter, math::geometry::deg2rad(  90), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  75 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {2,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 135), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad( 165), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  60), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)13, (SizeType)13 } ); gabor( filter, math::geometry::deg2rad(  15), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  90 ), 0.5, math::constants::PHI / 2.0, {3,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  30 ), 0.5, math::constants::PHI / 2.0, {1,2} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  45), 0.618975, 0, {3,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)12, (SizeType)12 } ); gabor( filter, math::geometry::deg2rad(  75), 0.618975, 0, {1,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)11, (SizeType)11 } ); gabor( filter, math::geometry::deg2rad(   0 ), 0.5, math::constants::PHI / 2.0, {3,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 150 ), 0.5, math::constants::PHI / 2.0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(   0), 0.618975, 0, {3,1} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad( 120), 0.618975, 0, {1,3} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 9, (SizeType) 9 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,2} );" ) );
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType) 8, (SizeType) 8 } ); gabor( filter, math::geometry::deg2rad(  15 ), 0.5, math::constants::PHI / 2.0, {1,1} );"));
+convolve.m_restriction.push_back( findIndex("filter.size( { (SizeType)10, (SizeType)10 } ); gabor( filter, math::geometry::deg2rad(  30), 0.618975, 0, {1,1} );"));
+
+
 std::sort(convolve.m_restriction.rbegin(), convolve.m_restriction.rend());
 convolve.m_restriction.erase(std::remove(convolve.m_restriction.begin(), convolve.m_restriction.end(), -1), convolve.m_restriction.end());
 convolve.m_restriction.push_back( -1 );
@@ -893,7 +844,7 @@ std::vector< double > trashold =
     std::cout << "Loop ... " <<  std::endl;
     int counter = 0;
     int index_begin = -1;
-    int index_end = 0*(int)convolve.m_lasagnaL.depth();
+    int index_end = (int)convolve.m_lasagnaL.depth();
 
     int best_quaity   = 0;
     int max_quaity = 0;
@@ -1180,10 +1131,10 @@ int main( int argc, char* argv[] )
  //  main_single( argc, argv );
   //main_convolve_sliding(argc, argv);
   //main_convolve_combination(  argc,  argv );
-  //main_convolve_increment(  argc,  argv );
+  main_convolve_increment(  argc,  argv );
   //main_rest( argc, argv );
-  extern int main_partial( int argc, char* argv[] );
-  extern int main_total( int argc, char* argv[] );
+  //extern int main_partial( int argc, char* argv[] );
+  //extern int main_total( int argc, char* argv[] );
 
-  return main_partial( argc, argv );
+  //return main_partial( argc, argv );
  }
