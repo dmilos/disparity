@@ -10,7 +10,8 @@ class Filter
   public:
     typedef std::size_t SizeType;
     typedef double ScalarType;
-    typedef std::array<SizeType,2>  Size2DType;
+    typedef std::array<SizeType, 2>  Size2DType;
+    typedef std::array<int, 2>  Integer2DType;
 
     typedef std::vector<ScalarType> ContainerType;
     Filter()
@@ -57,4 +58,7 @@ extern bool   difference( Filter & result, Filter const& left, Filter const& rig
 extern double     summae( Filter const& filter );
 extern bool     absolute( Filter & filter );
 extern bool     addition( Filter & result, Filter const& left, Filter const& right );
-extern void frame( Filter& target, Filter const& source, Filter::SizeType const& size );
+extern void frame(  Filter& target, Filter const& source, Filter::SizeType   const& size );
+extern void canvas( Filter& target, Filter const& source, Filter::Size2DType const& size);
+extern void move(   Filter& target, Filter const& source, Filter::Integer2DType const& direction );
+extern void quality( Filter::ScalarType& negative, Filter::ScalarType& zero, Filter::ScalarType& positive, Filter const& filter );

@@ -575,18 +575,19 @@ StereoConvolveMatch::StereoConvolveMatch()
   //make_laplace0( m_bank );
 
   int resolution = 12;
-  for( int radius=8; radius < 14; radius+= 1 )
+  for( int radius=8; radius < 25; radius+= 1 )
+  //for( int radius : { 10,13,14})
    {
     make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 1 } );
-    make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 2 } );
-    make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 3 } );
+    //make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 2 } );
+    //make_gabor_simetric( m_bank, radius, radius+1, resolution, { 1, 3 } );
     make_gabor_simetric( m_bank, radius, radius+1, resolution, { 2, 1 } );
     make_gabor_simetric( m_bank, radius, radius+1, resolution, { 3, 1 } );
     //if( 0 ==( radius%2 ) )
      {
       make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 1, 1 } );
-      make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 1, 2 } );
-      make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 1, 3 } );
+      //make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 1, 2 } );
+      //make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 1, 3 } );
       make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 2, 1 } );
       make_gabor_non_simetric( m_bank, radius, radius+1, resolution, { 3, 1 } );
      }
